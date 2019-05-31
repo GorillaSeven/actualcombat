@@ -6,82 +6,35 @@ package com.gorillaseven.wechatordersystem.entity;
  * @Created by Mr.Zeng
  */
 
-import java.util.Date;
+import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.math.BigDecimal;
 
 /**商品*/
+@Entity
+@Data
 public class ProductInfo {
     /** id*/
-    private int productId;
+    @Id
+    private String productId;
     /**名称*/
     private String productName;
     /**价格*/
-    private double productPrice;
+    private BigDecimal productPrice;
     /**库存*/
-    private int productStock;
+    private Integer productStock;
     /**描述*/
     private String productDescription;
     /**图片*/
     private String productIcon;
+    /**商品状态 0正常 1下架*/
+    private Integer productStatus;
     /**类目编号*/
-    private int categoryType;
+    private Integer categoryType;
 
     public ProductInfo() {
     }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public int getProductStock() {
-        return productStock;
-    }
-
-    public void setProductStock(int productStock) {
-        this.productStock = productStock;
-    }
-
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    public String getProductIcon() {
-        return productIcon;
-    }
-
-    public void setProductIcon(String productIcon) {
-        this.productIcon = productIcon;
-    }
-
-    public int getCategoryType() {
-        return categoryType;
-    }
-
-    public void setCategoryType(int categoryType) {
-        this.categoryType = categoryType;
-    }
-
 }
