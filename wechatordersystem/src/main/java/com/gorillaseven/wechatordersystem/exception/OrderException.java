@@ -15,4 +15,10 @@ public class OrderException extends RuntimeException {
         super(resultEnum.getMsg());
         this.code = resultEnum.getCode();
     }
+
+    public OrderException(Integer code,String message) {
+        super(message);
+        this.code = code;
+    }
+
 }

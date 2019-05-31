@@ -137,6 +137,7 @@ public class OrderMasterServiceImpl implements OrderMasterService {
     }
 
     @Override
+    @Transactional
     public OrderDTO finish(OrderDTO orderDTO) {
         //判断订单状态
         if(!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())){
@@ -156,6 +157,7 @@ public class OrderMasterServiceImpl implements OrderMasterService {
     }
 
     @Override
+    @Transactional
     public OrderDTO pay(OrderDTO orderDTO) {
         //判断订单状态
         if(!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())){
